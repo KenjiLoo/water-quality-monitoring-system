@@ -3,9 +3,7 @@ from tkinter import *
 from tkinter import ttk
 import os
 
-
-dir = "C:\\Users\\Loo\\Downloads\\SEGP9A\\GUI"
-
+dir = "../GUI"
 
 # -- FUNCTION DEFINITION --#
 def cameraPage(tk):

@@ -6,7 +6,7 @@ import os
 from Software.cam import retake_image, crop_image
 
 sys.path.insert(0, 'SEGP9A/Software')
-dir = "C:\\Users\\Loo\\Downloads\\SEGP9A\\GUI"
+dir = "../GUI"
 
 # -- FUNCTION DEFINITION --#
 
@@ -69,7 +69,7 @@ def main():
         global x_top, y_top, x_bot, y_bot
 
         # insert while loop to change crop image
-        os.chdir("C:\\Users\\Loo\\Downloads\\images")
+        os.chdir("../images")
 
         img = cv2.imread("0.jpg")
         dimension = cv2.selectROI("Crop Image", img)

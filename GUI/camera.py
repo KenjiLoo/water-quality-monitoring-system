@@ -10,7 +10,7 @@ from Software.cam import first_image
 sys.path.insert(0, 'SEGP9A/Software')
 
 
-dir = "C:\\Users\\Loo\\Downloads\\SEGP9A\\GUI"
+dir = "../GUI"
 
 
 # -- FUNCTION DEFINITION --#
@@ -82,16 +82,11 @@ def main():
         imgtk = ImageTk.PhotoImage(image=img)
         label.imgtk = imgtk
         label.configure(image=imgtk)
-        # Repeat after an interval to capture continiously
+        # Repeat after an interval to capture continously
         label.after(20, show_frames)
 
 
     show_frames()
-    # camera_frame_image = PhotoImage(file = "Assets/cameraframe.png")
-    # camera_frame = Label(window,
-    #                      image=camera_frame_image,
-    #                      background="white")
-    # camera_frame.grid(row=1, column=1)
 
     # --------------------------------------CAMERA CAPTURE BUTTON---------------------------------------------------
     # insert camera capture button

@@ -6,7 +6,7 @@ import mysql.connector
 import time_setting
 from Software.cam import delete_images
 
-dir = "C:\\Users\\Loo\\Downloads\\SEGP9A\\GUI"
+dir = "../GUI"
 
 # -- FUNCTION DEFINITION --#
 

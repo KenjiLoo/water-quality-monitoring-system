@@ -12,7 +12,7 @@ y_bot = 0
 def cropping(x1, y1, x2, y2):
     global x_top, y_top, x_bot, y_bot
 
-    os.chdir("C:\\Users\\Loo\\Downloads\\images")
+    os.chdir("../images")
     # insert while loop to change crop image
     img = cv2.imread("0.jpg")
     x_top = x1

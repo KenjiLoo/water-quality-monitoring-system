@@ -189,7 +189,7 @@ def start_program(img2):
     img1 = img2
 
     # mysql connection
-    img_path = "C:\\Users\\Loo\\Downloads\\images"
+    img_path = "../images"
     percentage = round(bhatta * 100, 2)
     image_non_bin = get_latest_image(img_path)
     image = convertToBinaryData(image_non_bin)

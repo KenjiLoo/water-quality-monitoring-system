@@ -7,8 +7,8 @@ import Software.main
 import Software.segment
 import Software.crop
 
-img_path = "C:\\Users\\Loo\\Downloads\\images"
-thresh_path = "C:\\Users\\Loo\\Downloads\\thresh"
+img_path = "../images"
+thresh_path = "../thresh"
 
 
 def first_image():

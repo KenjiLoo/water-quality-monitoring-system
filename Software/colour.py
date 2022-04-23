@@ -4,7 +4,7 @@ import cv2
 import numpy as np
 
 index = ["color", "color_name", "R", "G", "B"]
-csv_file = pd.read_csv('C:\\Users\\Loo\\Downloads\\coloursfull.csv', names=index, header=None)
+csv_file = pd.read_csv('../coloursfull.csv', names=index, header=None)
 
 # -- FUNCTION DEFINITION --#
 
