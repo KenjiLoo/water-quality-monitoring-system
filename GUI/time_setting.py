@@ -5,21 +5,23 @@ import sys
 from Software.cam import image_capture
 
 sys.path.insert(0, 'SEGP9A/Software')
-
+global thread
 
 # -- FUNCTION DEFINITION --#
 
 # change to the cropping page
 def imageCroppingPage(tk):
     tk.destroy()
-    import image_cropping
+    import GUI.image_cropping as image_cropping
     image_cropping.main()
+
 
 # change to the final page
 def finalPage(tk):
     tk.destroy()
-    import final_page
+    import GUI.final_page as final_page
     final_page.main()
+
 
 # facilitates the time interval setting
 def timeInterval(tk, minute, second):
@@ -27,24 +29,28 @@ def timeInterval(tk, minute, second):
     sec = int(second.get())
     interval = (min * 60) + sec
     global thread
-    import Software.main
-    Software.main.get_image()
+    import Software.main_algo
+    Software.main_algo.get_image()
     thread = threading.Thread(target=image_capture, args=(interval,), daemon=True)
     thread.start()
     finalPage(tk)
+
 
 # stop the threading
 def stopThread():
     global thread
     thread.join()
 
+
 # get the minutes in the time interval function
 def getMin(minute):
     minute.get()
 
+
 # get the second in the time interval function
 def getSec(second):
     second.get()
+
 
 # main algorithm that's running in this page
 def main():

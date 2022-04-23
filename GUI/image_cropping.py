@@ -6,20 +6,20 @@ import os
 from Software.cam import retake_image, crop_image
 
 sys.path.insert(0, 'SEGP9A/Software')
-dir = "../GUI"
+dir = os.path.dirname(os.path.abspath(__file__))
 
 # -- FUNCTION DEFINITION --#
 
 # to open the camera page
 def cameraPage(tk):
     tk.destroy()
-    import camera
+    import GUI.camera as camera
     camera.main()
 
 # to open the interval settings page
 def timeSettingPage(tk):
     tk.destroy()
-    import time_setting
+    import GUI.time_setting as time_setting
     time_setting.main()
 
 # open camera page to retake

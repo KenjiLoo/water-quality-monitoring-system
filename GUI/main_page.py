@@ -2,23 +2,26 @@ import webbrowser
 from tkinter import *
 from tkinter import ttk
 import os
-
-dir = "../GUI"
+import argparse
 
 # -- FUNCTION DEFINITION --#
+
+dir = os.path.dirname(os.path.abspath(__file__))
+
 def cameraPage(tk):
     tk.destroy()
-    import camera
+    import GUI.camera as camera
     camera.main()
 
 
 def callWeb():
-    webbrowser.open_new(r"https://www.google.com")
+    webbrowser.open_new(r"localhost/webapp/index.php")
 
 def main():
     # --------------------------------------TOP BAR---------------------------------------------------
     # define window as GUI window, set minimum dimension
     os.chdir(dir)
+
     window = Tk()
     window.minsize(850, 400)
 

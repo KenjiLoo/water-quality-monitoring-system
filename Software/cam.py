@@ -3,7 +3,7 @@ import cv2
 from cv2.cv2 import VideoCapture
 import os
 
-import Software.main
+import Software.main_algo
 import Software.segment
 import Software.crop
 
@@ -64,7 +64,7 @@ def image_capture(interval):
             os.chdir(thresh_path)
             cv2.imwrite(str(name) + "_thresh.jpg", thresh)
             var = cv2.imread(str(name) + "_thresh.jpg")
-            Software.main.start_program(var)
+            Software.main_algo.start_program(var)
         else:
             print("error")
         while (elapsed < interval) and run:

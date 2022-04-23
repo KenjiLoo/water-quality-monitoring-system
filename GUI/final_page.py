@@ -3,23 +3,23 @@ from tkinter import *
 from tkinter import ttk
 import os
 import mysql.connector
-import time_setting
+import GUI.time_setting as time_setting
 from Software.cam import delete_images
 
-dir = "../GUI"
+dir = os.path.dirname(os.path.abspath(__file__))
 
 # -- FUNCTION DEFINITION --#
 
 # opens the homepage
 def homePage(tk):
     tk.destroy()
-    import main_page
+    import GUI.main_page as main_page
     main_page.main()
 
 # opens the camera page
 def cameraPage(tk):
     tk.destroy()
-    import camera
+    import GUI.camera as camera
     camera.main()
 
 # opens the web app
@@ -79,7 +79,11 @@ def main():
     id_list = []
     for row in get_id:
         for i in row:
+            # if str(i)[1] == '':
             id_list.append(str(i)[0])
+            # else:
+            #     id_list.append((str(i)[0])+(str(i)[1]))
+
     id_val = int(id_list[-1]) + 1
 
     disp_string = "ID: "

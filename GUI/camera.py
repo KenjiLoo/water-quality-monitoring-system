@@ -10,20 +10,19 @@ from Software.cam import first_image
 sys.path.insert(0, 'SEGP9A/Software')
 
 
-dir = "../GUI"
-
+dir = os.path.dirname(os.path.abspath(__file__))
 
 # -- FUNCTION DEFINITION --#
 def homePage(tk):
     tk.destroy()
-    import main_page
+    import GUI.main_page as main_page
     main_page.main()
     # take note: may return to main_page_2
 
 
 def finalPage(tk):
     tk.destroy()
-    import image_cropping
+    import GUI.image_cropping as image_cropping
     image_cropping.main()
 
 
