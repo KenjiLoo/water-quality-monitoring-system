@@ -1,5 +1,6 @@
 import cv2
 
+
 # -- FUNCTION DEFINITION --#
 
 # performs otsu thresholding
@@ -17,4 +18,3 @@ def get_threshold(img):
                 img[x][y][:] = 255
 
     return img
-

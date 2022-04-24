@@ -11,6 +11,7 @@ img_path = "../images"
 thresh_path = "../thresh"
 
 
+# Captures the image when the user presses the button
 def first_image():
     os.chdir(img_path)
     cam = VideoCapture(0, cv2.CAP_DSHOW)
@@ -21,11 +22,13 @@ def first_image():
     else:
         print("error")
 
+
 # to retake image
 def retake_image():
     os.chdir(img_path)
     for file in os.listdir(img_path):
         os.remove(file)
+
 
 # to crop image
 def crop_image(x1, y1, x2, y2):
@@ -36,11 +39,13 @@ def crop_image(x1, y1, x2, y2):
     cv2.imwrite("0_thresh.jpg", thresh)
     run = True
 
+
 # to get the first image
 def get_image():
     os.chdir(thresh_path)
     img = cv2.imread("0_thresh.jpg")
     return img
+
 
 # to capture image every interval
 def image_capture(interval):
@@ -71,7 +76,8 @@ def image_capture(interval):
             elapsed = time.time() - start
         name = name + 1
 
-# deletes the images in the folder after processing them
+
+# deletes the images in the folder after the observation is stopped
 def delete_images():
     global run
     run = False

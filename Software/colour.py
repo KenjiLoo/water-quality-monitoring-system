@@ -24,7 +24,7 @@ def getColorName(rgb):
     return cname
 
 
-# MAIN function to read the input file
+# gets the names of the two most common colours
 def list_colour(img):
     name = []
     rgb_number = []
@@ -50,7 +50,7 @@ def list_colour(img):
     return string
 
 
-# MAIN function to read the input file
+# gets the most common RGB value
 def get_colour(img):
     rgb_number = []
 
@@ -66,32 +66,7 @@ def get_colour(img):
     return rgb_common[0][0]
 
 
-def show_colour(img):
-    size = 200
-    rgb_number = []
-    (row, col, dim) = img.shape
-    for x in range(row):
-        for y in range(col):
-            R = img[x][y][2]
-            G = img[x][y][1]
-            B = img[x][y][0]
-        rgb_number.append((R, G, B))
-
-    rgb = Counter(rgb_number).most_common(1)
-    colour = rgb[0][0]
-    display = np.zeros([size, size, 3])
-    for x in range(size):
-        for y in range(size):
-            display[x, y, 2] = colour[0]
-            display[x, y, 1] = colour[1]
-            display[x, y, 0] = colour[2]
-
-    cv2.imwrite("colour.png", display)
-    display = cv2.imread("colour.png")
-    return display
-
-
-# establishing conditions for H value (THERE IS AN ERROR)
+# calculates H value
 def declare_h(dif, div, max_value):
     if dif == 0:
         return 0
@@ -106,12 +81,13 @@ def declare_h(dif, div, max_value):
         # error
 
 
-# establishing conditions for S value
+# calculates S value
 def declare_s(max_value, dif):
     if max_value == 0:
         return 0
     else:
         return (dif / max_value) * 100
+
 
 # converts rgb values to hsv
 def rgb2hsv(colour):

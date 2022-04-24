@@ -7,10 +7,11 @@ import os
 import mysql.connector
 from tkinter import messagebox
 
+
 # -- FUNCTION DEFINITION --#
 
 # gets the latest image from the image folder
-def get_latest_image(dirpath, valid_extensions=('jpg','jpeg','png')):
+def get_latest_image(dirpath, valid_extensions=('jpg', 'jpeg', 'png')):
     """
     Get the latest image file in the given directory
     """
@@ -19,12 +20,13 @@ def get_latest_image(dirpath, valid_extensions=('jpg','jpeg','png')):
     valid_files = [os.path.join(dirpath, filename) for filename in os.listdir(dirpath)]
     # filter out directories, no-extension, and wrong extension files
     valid_files = [f for f in valid_files if '.' in f and \
-        f.rsplit('.',1)[-1] in valid_extensions and os.path.isfile(f)]
+                   f.rsplit('.', 1)[-1] in valid_extensions and os.path.isfile(f)]
 
     if not valid_files:
         raise ValueError("No valid images in %s" % dirpath)
 
     return max(valid_files, key=os.path.getmtime)
+
 
 # converts the image to binary data to be posted as a BLOB
 def convertToBinaryData(filename):
@@ -33,7 +35,8 @@ def convertToBinaryData(filename):
         binaryData = file.read()
     return binaryData
 
-# background removal
+
+# removes the "background" pixels
 def remove_background(img):
     row = img.shape[0]
     col = img.shape[1]
@@ -89,7 +92,8 @@ def remove_background(img):
     result = cv2.imread("hist.png")
     return result
 
-# compares the new image to the first image
+
+# compares the current image to the previous image
 def comparison(img2):
     global img1
     img1_hsv = cv2.cvtColor(img1, cv2.COLOR_BGR2HSV)
@@ -114,7 +118,8 @@ def comparison(img2):
 
     return bhatta
 
-# reads the rgb value of the background
+
+# gets the RGB values of all pixels which aren't the "background"
 def rgb_background(img):
     row = img.shape[0]
     col = img.shape[1]
@@ -170,10 +175,12 @@ def rgb_background(img):
     result = cv2.imread("rgb.png")
     return result
 
+
 # opens camera and capture image
 def get_image():
     global img1
     img1 = Software.cam.get_image()
+
 
 # starts the image processing algorithm
 def start_program(img2):
@@ -200,7 +207,7 @@ def start_program(img2):
     mysqldb = mysql.connector.connect(host="localhost", user="root", password="", database="hfyql1ju_csv_db_7")
     mycursor = mysqldb.cursor()
 
-    #GET LATEST ID AND POST AN INCREMENT
+    # GET LATEST ID AND POST AN INCREMENT
     sql_select_Query = "select id from results"
     mycursor.execute(sql_select_Query)
     get_id = mycursor.fetchall()
@@ -222,6 +229,7 @@ def start_program(img2):
         print("failed pushing")
         mysqldb.rollback()
         mysqldb.close()
+
 
 threshold = 0.568
 img1 = []
