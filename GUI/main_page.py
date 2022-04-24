@@ -37,7 +37,7 @@ def main():
     empty.grid(row=0, column=0)
 
     # top bar with logo
-    logo = PhotoImage(file="GUI/Assets/Group 2.png")
+    logo = PhotoImage(file="Assets/Group 2.png")
     title_logo = Label(window,
                        text="",
                        image=logo,
@@ -51,7 +51,7 @@ def main():
     empty2.grid(row=0, column=2)
 
     # top bar right side logo
-    logo2 = PhotoImage(file="GUI/Assets/logo 2.png")
+    logo2 = PhotoImage(file="Assets/logo 2.png")
     right_logo = Label(window,
                        text="",
                        image=logo2,
@@ -61,7 +61,7 @@ def main():
 
     # --------------------------------------MAIN BUTTONS---------------------------------------------------
     # button 1
-    button1_image = PhotoImage(file="GUI/Assets/button1.png")
+    button1_image = PhotoImage(file="Assets/button1.png")
     button1 = Button(window,
                      image=button1_image,
                      background="white",
@@ -72,7 +72,7 @@ def main():
     button1.grid(row=1, column=0)
 
     # button 2
-    button2_image = PhotoImage(file="GUI/Assets/button2.png")
+    button2_image = PhotoImage(file="Assets/button2.png")
     button2 = Button(window,
                      image=button2_image,
                      background="white",
@@ -83,7 +83,7 @@ def main():
     button2.grid(row=1, column=1)
 
     # button 3
-    button3_image = PhotoImage(file="GUI/Assets/button3.png")
+    button3_image = PhotoImage(file="Assets/button3.png")
     button3 = Button(window,
                      image=button3_image,
                      background="white",
