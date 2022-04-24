@@ -200,7 +200,7 @@ def start_program(img2):
     mysqldb = mysql.connector.connect(host="localhost", user="root", password="", database="hfyql1ju_csv_db_7")
     mycursor = mysqldb.cursor()
 
-    #GET LATEST ID AND POST AN INCREMENT
+    # GET LATEST ID AND POST AN INCREMENT
     sql_select_Query = "select id from results"
     mycursor.execute(sql_select_Query)
     get_id = mycursor.fetchall()
