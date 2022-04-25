@@ -7,17 +7,17 @@ Both the GUI and the Web-app needs Python, and needs to be connected to a localh
       - Open the XAMPP Application and run Apache and MySQL
       - Open your browser and type "localhost" in your address search bar
       - Click on "phpMyAdmin" in the top right corner of the page 
-      - Import these sql files into your server using the export button
+      - Import `hfyql1ju_csv_db_7.sql` and `hfyql1ju_segp.sql` into your server using the export button
   - macOS
       - Make sure Python is installed on your machine: https://www.python.org/downloads/macos/
       - Install phpMyAdmin for macOS: https://www.javatpoint.com/how-to-install-phpmyadmin-on-mac
       - Click on "phpMyAdmin" in the top right corner of the page 
-      - Import these sql files into your server using the export button
+      - Import `hfyql1ju_csv_db_7.sql` and `hfyql1ju_segp.sql` into your server using the export button
   - Linux:
       - Make sure Python is installed on your machine: https://opensource.com/article/20/4/install-python-linux
       - Install phpMyAdmin for Linux: https://www.linuxtechi.com/install-phpmyadmin-linux/
       - Click on "phpMyAdmin" in the top right corner of the page 
-      - Import these sql files into your server using the export button
+      - Import `hfyql1ju_csv_db_7.sql` and `hfyql1ju_segp.sql` into your server using the export button
 
 #TO RUN THE SOFTWARE: 
 
