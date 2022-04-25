@@ -26,4 +26,4 @@ Both the GUI and the Web-app needs Python, and needs to be connected to a localh
   - Make sure database is set-up with the database files imported
   - Run `__main__.py`: 
      - Open any IDE of your choice 
-     - Or Open your command prompt to the project directory and run `python __main__.py` and click enter
+     - Or Open your command prompt to the project directory and type `python __main__.py` and click enter
