@@ -21,9 +21,9 @@ Both the GUI and the Web-app needs Python, and needs to be connected to a localh
 
 #TO RUN THE SOFTWARE: 
 
-  - NAVIGATE TO `__main__.py`
-  - RUN LOCALHOST SERVER
-  - MAKE SURE DATABASE ARE SET-UP IN THE LOCALHOST SERVER
-  - RUN `__main__.py`: 
+  - Navigate to `__main__.py`
+  - Run localhost server
+  - Make sure database is set-up with the database files imported
+  - Run `__main__.py`: 
      - Open any IDE of your choice 
      - Or Open your command prompt to the project directory and run `python __main__.py` and click enter
