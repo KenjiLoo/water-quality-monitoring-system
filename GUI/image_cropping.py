@@ -17,7 +17,7 @@ def cameraPage(tk):
     """
     **Group defined function** \n
     This function is used to destroy the current page and to open the camera page.\n
-    :param tk: !!!
+    :param tk: Tkinter Object declared before function call, used in this function for destroy() method
     """
     tk.destroy()
     import GUI.camera as camera
@@ -28,7 +28,7 @@ def timeSettingPage(tk):
     """
     **Group defined function** \n
     This function is used to destroy the current page and to open the time interval page.\n
-    :param tk: !!!
+    :param tk: Tkinter Object declared before function call, used in this function for destroy() method
     """
     tk.destroy()
     import GUI.time_setting as time_setting
@@ -39,7 +39,7 @@ def retakeImage(tk):
     """
     **Group defined function** \n
     This function is used to open the camera page to retake an image.\n
-    :param tk: !!!
+    :param tk: Tkinter Object declared before function call, used in this function for destroy() method
     """
     retake_image()
     cameraPage(tk)
@@ -49,7 +49,7 @@ def start_crop(tk):
     """
     **Group defined function** \n
     This function is used to facilitate the cropping mechanism.\n
-    :param tk: !!!
+    :param tk: Tkinter Object declared before function call, used in this function for destroy() method
     """
     crop_image(x_top, y_top, x_bot, y_bot)
     os.chdir(dir)

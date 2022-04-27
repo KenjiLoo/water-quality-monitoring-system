@@ -16,7 +16,7 @@ def imageCroppingPage(tk):
     """
     **Group defined function** \n
     This function is used to destroy the current page and to open the image cropping page.\n
-    :param tk: !!!
+    :param tk: Tkinter Object declared before function call, used in this function for destroy() method
     """
     tk.destroy()
     import GUI.image_cropping as image_cropping
@@ -27,7 +27,7 @@ def finalPage(tk):
     """
     **Group defined function** \n
     This function is used to destroy the current page and to open the final page.\n
-    :param tk: !!!
+    :param tk: Tkinter Object declared before function call, used in this function for destroy() method
     """
     tk.destroy()
     import GUI.final_page as final_page
@@ -38,7 +38,7 @@ def timeInterval(tk, minute, second):
     """
     **Group defined function** \n
     This function is used to facilitate the time interval settings.\n
-    :param tk: !!!
+    :param tk: Tkinter Object declared before function call, used in this function for destroy() method
     :param minute: A numerical value representing the minutes of the time interval.
     :param second: A numerical value representing the seconds of the time interval.
     """
@@ -110,18 +110,42 @@ def main():
 
     # --------------------------------------SET TIME INTERVAL---------------------------------------------------
 
-    Label(window, text="", background="white").pack()
-    Label(window, text="TIME INTERVAL", background="white", font=("Poppins", 10), ).pack()
-    Label(window, text="Minimum: 10 seconds", background="white", font=("Poppins", 10), ).pack()
-    Label(window, text="(minutes)", background="white", font=("Poppins", 10), ).pack()
+    Label(window,
+          text="",
+          background="white").pack()
+    Label(window,
+          text="TIME INTERVAL",
+          background="white",
+          font=("Poppins", 10), ).pack()
+    Label(window,
+          text="Minimum: 10 seconds",
+          background="white",
+          font=("Poppins", 10), ).pack()
+    Label(window,
+          text="(minutes)",
+          background="white",
+          font=("Poppins", 10), ).pack()
     minute = StringVar(value=0)
-    time_interval = Spinbox(window, from_=0, to=60, textvariable=minute, command=getMin(minute))
+    time_interval = Spinbox(window,
+                            from_=0,
+                            to=60,
+                            textvariable=minute,
+                            command=getMin(minute))
     time_interval.pack()
-    Label(window, text="(seconds)", background="white", font=("Poppins", 10), ).pack()
+    Label(window,
+          text="(seconds)",
+          background="white",
+          font=("Poppins", 10), ).pack()
     second = StringVar(value=0)
-    time_interval_seconds = Spinbox(window, from_=0, to=59, textvariable=second, command=getSec(second))
+    time_interval_seconds = Spinbox(window,
+                                    from_=0,
+                                    to=59,
+                                    textvariable=second,
+                                    command=getSec(second))
     time_interval_seconds.pack()
-    Label(window, text="", background="white").pack()
+    Label(window,
+          text="",
+          background="white").pack()
     set_button_image = PhotoImage(file="Assets/set_button.png")
     set_button = Button(window,
                         image=set_button_image,

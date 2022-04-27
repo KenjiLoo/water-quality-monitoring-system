@@ -20,7 +20,7 @@ def homePage(tk):
     """
     **Group defined function** \n
     This function is used to destroy the current page and to open the home page.\n
-    :param tk: !!!
+    :param tk: Tkinter Object declared before function call, used in this function for destroy() method
     """
     tk.destroy()
     import GUI.main_page as main_page
@@ -32,7 +32,7 @@ def finalPage(tk):
     """
     **Group defined function** \n
     This function is used to destroy the current page and to open the final page.\n
-    :param tk: !!!
+    :param tk: Tkinter Object declared before function call, used in this function for destroy() method
     """
     tk.destroy()
     import GUI.image_cropping as image_cropping
@@ -43,7 +43,7 @@ def imageCapture(tk):
     """
     **Group defined function** \n
     This function is used to destroy the current page and to open the final page.\n
-    :param tk: !!!
+    :param tk: Tkinter Object declared before function call, used in this function for destroy() method
     """
     first_image()
     os.chdir(dir)
@@ -57,7 +57,7 @@ def main():
     inclusive of its functionalities.\n
     """
     # --------------------------------------TOP BAR---------------------------------------------------
-    # define window as GUI window, set minimum dimension
+    # define window as GUI window, set minimum & maximum dimension
     window = Tk()
     window.minsize(850, 625)
     window.maxsize(1000, 550)

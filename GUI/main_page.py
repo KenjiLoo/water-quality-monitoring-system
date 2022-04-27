@@ -16,7 +16,7 @@ def cameraPage(tk):
     """
     **Group defined function** \n
     This function is used to destroy the current page and to open the camera page.\n
-    :param tk: !!!
+    :param tk: Tkinter Object declared before function call, used in this function for destroy() method
     """
     tk.destroy()
     import GUI.camera as camera
@@ -28,7 +28,7 @@ def callWeb():
     **Group defined function** \n
     This function is used to open the web application.\n
     """
-    webbrowser.open_new(r"localhost/webapp/index.php")
+    webbrowser.open_new(r"localhost/WebApp/index.php")
 
 
 def main():

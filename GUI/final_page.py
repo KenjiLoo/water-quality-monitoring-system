@@ -17,7 +17,7 @@ def homePage(tk):
     """
     **Group defined function** \n
     This function destroys the current window and opens the home/main page.\n
-    :param tk: !!!
+    :param tk: Tkinter Object declared before function call, used in this function for destroy() method
     """
     tk.destroy()
     import GUI.main_page as main_page
@@ -28,7 +28,7 @@ def cameraPage(tk):
     """
     **Group defined function** \n
     This function destroys the current window and opens the camera page.\n
-    :param tk: !!!
+    :param tk: Tkinter Object declared before function call, used in this function for destroy() method
     """
     tk.destroy()
     import GUI.camera as camera
@@ -40,7 +40,7 @@ def callWeb():
     **Group defined function** \n
     This function is used to open the web application.\n
     """
-    webbrowser.open_new(r"localhost/webapp/index.php")
+    webbrowser.open_new(r"localhost/WebApp/index.php")
 
 
 def stopProgram(tk):
@@ -48,7 +48,7 @@ def stopProgram(tk):
     **Group defined function** \n
     This function is used to terminate the program where it stops all threads, delete past images
     and returns to the home page.\n
-    :param tk: !!!
+    :param tk: Tkinter Object declared before function call, used in this function for destroy() method
     """
     print('----------------------------------')
     print("Software is terminating...")

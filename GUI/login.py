@@ -14,7 +14,7 @@ def mainPage(tk):
     """
     **Group defined function** \n
     This function is used to destroy the current page and to open the home/main page. \n
-    :param tk: !!!
+    :param tk: Tkinter Object declared before function call, used in this function for destroy() method
     """
     tk.destroy()
     import GUI.main_page as main_page
@@ -26,7 +26,7 @@ def callWeb():
     **Group defined function** \n
     This function is used to open the web application.
     """
-    webbrowser.open_new(r"local/webapp/index.php")
+    webbrowser.open_new(r"local/WebApp/index.php")
 
 
 def Ok():
@@ -93,16 +93,32 @@ right_logo = Label(window,
 right_logo.grid(row=0, column=3)
 
 # --------------------------------------MAIN BUTTONS---------------------------------------------------
-Label(window, text="Please enter login details", background="white", font=("Poppins", 10)).grid(row=1, column=1)
-Label(window, text="", background="white").grid(row=2)
-Label(window, text="Username", background="white", font=("Poppins", 10), ).grid(row=3, column=1)
+Label(window,
+      text="Please enter login details",
+      background="white",
+      font=("Poppins", 10)).grid(row=1, column=1)
+Label(window,
+      text="",
+      background="white").grid(row=2)
+Label(window,
+      text="Username",
+      background="white",
+      font=("Poppins", 10), ).grid(row=3, column=1)
 username_login_entry = Entry(window, textvariable="username")
 username_login_entry.grid(row=4, column=1)
-Label(window, text="", background="white").grid(row=5, column=1)
-Label(window, text="Password", background="white", font=("Poppins", 10)).grid(row=6, column=1)
+Label(window,
+      text="",
+      background="white").grid(row=5, column=1)
+Label(window,
+      text="Password",
+      background="white",
+      font=("Poppins", 10)).grid(row=6, column=1)
 password__login_entry = Entry(window, textvariable="password", show='*')
 password__login_entry.grid(row=7, column=1)
-Label(window, text="", background="white", font=("Poppins", 10)).grid(row=8, column=1)
+Label(window,
+      text="",
+      background="white",
+      font=("Poppins", 10)).grid(row=8, column=1)
 login_button_image = PhotoImage(file="GUI/Assets/login_button.png")
 login_button = Button(window,
                       image=login_button_image,
