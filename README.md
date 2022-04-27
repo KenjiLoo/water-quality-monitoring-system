@@ -1,4 +1,4 @@
-#PRE-REQUISITES: 
+# PRE-REQUISITES: 
 
 Both the GUI and the Web-app needs Python, and needs to be connected to a localhost server. Below are the steps to get your localhost server running for each OS: 
   - Windows
@@ -19,7 +19,7 @@ Both the GUI and the Web-app needs Python, and needs to be connected to a localh
       - Click on "phpMyAdmin" in the top right corner of the page 
       - Import `hfyql1ju_csv_db_7.sql` and `hfyql1ju_segp.sql` into your server using the export button
 
-#TO RUN THE SOFTWARE: 
+# TO RUN THE SOFTWARE: 
 
   - Navigate to `__main__.py`
   - Run localhost server
