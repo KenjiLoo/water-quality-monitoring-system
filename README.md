@@ -1,4 +1,6 @@
-# PRE-REQUISITES: 
+GITHUB LINK: https://github.com/KenjiLoo/SEGP9A
+
+# PRE-REQUISITES:
 
 Both the GUI and the Web-app needs Python, and needs to be connected to a localhost server. Below are the steps to get your localhost server running for each OS: 
   - Windows
