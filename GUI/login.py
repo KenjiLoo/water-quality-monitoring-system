@@ -5,21 +5,37 @@ from tkinter import *
 from tkinter import ttk
 from tkinter import messagebox
 
+"""
+This file is used to design and implement the functionalities of the login page in the GUI.
+"""
 
-# -- FUNCTION DEFINITION --#
 
-# redirects to the main page
 def mainPage(tk):
+    """
+    **Group defined function** \n
+    This function is used to destroy the current page and to open the home/main page. \n
+    :param tk: !!!
+    """
     tk.destroy()
     import GUI.main_page as main_page
     main_page.main()
 
-# calls the webapp
+
 def callWeb():
+    """
+    **Group defined function** \n
+    This function is used to open the web application.
+    """
     webbrowser.open_new(r"local/webapp/index.php")
 
-#-- LOGIN SYSTEM --*
+
 def Ok():
+    """
+    **Group defined function** \n
+    This function contains the designs of the GUI (Buttons, Bars, Images, Window Dimension etc.)
+    inclusive of its functionalities. Moreover, it includes the functionalities of the login system
+    which is linked to the database.\n
+    """
     mysqldb = mysql.connector.connect(host="localhost", user="root", password="", database="hfyql1ju_segp")
     mycursor = mysqldb.cursor()
     username = username_login_entry.get()

@@ -7,15 +7,20 @@ import os
 import mysql.connector
 from tkinter import messagebox
 
+"""
+This file contains the main algorithms used for the water analysis software.
+"""
 
-# -- FUNCTION DEFINITION --#
 
 # gets the latest image from the image folder
 def get_latest_image(dirpath, valid_extensions=('jpg', 'jpeg', 'png')):
     """
-    Get the latest image file in the given directory
+    !!!
+    Get the latest image file in the given directory.\n
+    :param dirpath: !!!
+    :param valid_extensions: !!!
+    :return: !!!
     """
-
     # get filepaths of all files and dirs in the given dir
     valid_files = [os.path.join(dirpath, filename) for filename in os.listdir(dirpath)]
     # filter out directories, no-extension, and wrong extension files
@@ -30,14 +35,25 @@ def get_latest_image(dirpath, valid_extensions=('jpg', 'jpeg', 'png')):
 
 # converts the image to binary data to be posted as a BLOB
 def convertToBinaryData(filename):
+    """
+    !!!
+    :param filename: !!!
+    :return: !!!
+    """
     # Convert digital data to binary format
     with open(filename, 'rb') as file:
         binaryData = file.read()
     return binaryData
 
 
-# removes the "background" pixels
 def remove_background(img):
+    """
+    **Group defined function** \n
+    Creates a new 3D array to represent the image by replacing any HSV values of (0, 0, 255)
+    with the most common HSV value.\n
+    :param img: A 3D array of the image.
+    :return: A 3D array of the image without HSV values of (0, 0, 255).
+    """
     row = img.shape[0]
     col = img.shape[1]
     size = row * col
@@ -93,8 +109,13 @@ def remove_background(img):
     return result
 
 
-# compares the current image to the previous image
 def comparison(img2):
+    """
+    **The code was adapted from:** *https://theailearner.com/2019/08/13/comparing-histograms-using-opencv-python/*\n
+    Compares the HSV histogram of the current image with the previous image using the Bhattacharyya formula.\n
+    :param img2: A 3D array of the new image.
+    :return: A float representing the degree of difference.
+    """
     global img1
     img1_hsv = cv2.cvtColor(img1, cv2.COLOR_BGR2HSV)
     img2_hsv = cv2.cvtColor(img2, cv2.COLOR_BGR2HSV)
@@ -119,8 +140,14 @@ def comparison(img2):
     return bhatta
 
 
-# gets the RGB values of all pixels which aren't the "background"
 def rgb_background(img):
+    """
+    **Group defined function** \n
+    Creates a new 3D array to represent the image by replacing any RGB values of (255, 255, 255)
+    with the most common RGB value.\n
+    :param img: A 3D array of the image.
+    :return: A 3D array of the image without RGB values of (255, 255, 255).
+    """
     row = img.shape[0]
     col = img.shape[1]
     size = row * col
@@ -176,14 +203,23 @@ def rgb_background(img):
     return result
 
 
-# opens camera and capture image
 def get_image():
+    """
+    **Group defined function** \n
+    This function is used to read the first image after segmentation.\n
+    :return: 3D array of the first image.
+    """
     global img1
     img1 = Software.cam.get_image()
 
 
-# starts the image processing algorithm
 def start_program(img2):
+    """
+    !!!
+    Calls the functions to compare the images and get the names of the two most occurring colours.\n
+    !!!
+    :param img2: A 3D array of the new image
+    """
     global img1
     bhatta = comparison(img2)
     if bhatta >= threshold:

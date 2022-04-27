@@ -6,28 +6,50 @@ import mysql.connector
 import GUI.time_setting as time_setting
 from Software.cam import delete_images
 
+"""
+This file is used to design and implement the functionalities of the final page in the GUI.
+"""
+
 dir = os.path.dirname(os.path.abspath(__file__))
 
-# -- FUNCTION DEFINITION --#
 
-# opens the homepage
 def homePage(tk):
+    """
+    **Group defined function** \n
+    This function destroys the current window and opens the home/main page.\n
+    :param tk: !!!
+    """
     tk.destroy()
     import GUI.main_page as main_page
     main_page.main()
 
-# opens the camera page
+
 def cameraPage(tk):
+    """
+    **Group defined function** \n
+    This function destroys the current window and opens the camera page.\n
+    :param tk: !!!
+    """
     tk.destroy()
     import GUI.camera as camera
     camera.main()
 
-# opens the web app
+
 def callWeb():
+    """
+    **Group defined function** \n
+    This function is used to open the web application.\n
+    """
     webbrowser.open_new(r"localhost/webapp/index.php")
 
-# to terminate the program
+
 def stopProgram(tk):
+    """
+    **Group defined function** \n
+    This function is used to terminate the program where it stops all threads, delete past images
+    and returns to the home page.\n
+    :param tk: !!!
+    """
     print('----------------------------------')
     print("Software is terminating...")
     delete_images()
@@ -35,8 +57,13 @@ def stopProgram(tk):
     print("Software has terminated")
     homePage(tk)
 
-# the main algorithm that runs in this page
+
 def main():
+    """
+    **Group defined function** \n
+    This function contains the designs of the GUI (Buttons, Bars, Images, Window Dimension etc.)
+    inclusive of its functionalities.\n
+    """
     # --------------------------------------TOP BAR---------------------------------------------------
     # define window as GUI window, set minimum dimension
     window = Tk()
@@ -114,7 +141,6 @@ def main():
                      borderwidth=0,
                      command=lambda: callWeb())
     button1.grid(row=6, column=0)
-
 
     # button 3
     button3_image = PhotoImage(file="Assets/button2_5.png")

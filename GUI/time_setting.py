@@ -4,27 +4,44 @@ import threading
 import sys
 from Software.cam import image_capture
 
+"""
+This file is used to design and implement the functionalities of the time interval page in the GUI.
+"""
+
 sys.path.insert(0, 'SEGP9A/Software')
 global thread
 
-# -- FUNCTION DEFINITION --#
 
-# change to the cropping page
 def imageCroppingPage(tk):
+    """
+    **Group defined function** \n
+    This function is used to destroy the current page and to open the image cropping page.\n
+    :param tk: !!!
+    """
     tk.destroy()
     import GUI.image_cropping as image_cropping
     image_cropping.main()
 
 
-# change to the final page
 def finalPage(tk):
+    """
+    **Group defined function** \n
+    This function is used to destroy the current page and to open the final page.\n
+    :param tk: !!!
+    """
     tk.destroy()
     import GUI.final_page as final_page
     final_page.main()
 
 
-# facilitates the time interval setting
 def timeInterval(tk, minute, second):
+    """
+    **Group defined function** \n
+    This function is used to facilitate the time interval settings.\n
+    :param tk: !!!
+    :param minute: A numerical value representing the minutes of the time interval.
+    :param second: A numerical value representing the seconds of the time interval.
+    """
     min = int(minute.get())
     sec = int(second.get())
     interval = (min * 60) + sec
@@ -36,24 +53,39 @@ def timeInterval(tk, minute, second):
     finalPage(tk)
 
 
-# stop the threading
 def stopThread():
+    """
+    **Group defined function** \n
+    This function is used to stop the threading.\n
+    """
     global thread
     thread.join()
 
 
-# get the minutes in the time interval function
 def getMin(minute):
+    """
+    **Group defined function** \n
+    This function is used to get the value in the "Minutes" textbox.\n
+    :param minute: A string variable of the minutes of the time interval.
+    """
     minute.get()
 
 
-# get the second in the time interval function
 def getSec(second):
+    """
+    **Group defined function** \n
+    This function is used to get the value in the "Seconds" textbox.\n
+    :param second: A string variable of the seconds of the time interval.
+    """
     second.get()
 
 
-# main algorithm that's running in this page
 def main():
+    """
+    **Group defined function** \n
+    This function contains the designs of the GUI (Buttons, Bars, Images, Window Dimension etc.)
+    inclusive of its functionalities.\n
+    """
     # --------------------------------------TOP BAR---------------------------------------------------
     # define window as GUI window, set minimum dimension
     window = Tk()

@@ -1,15 +1,24 @@
 from collections import Counter
 import pandas as pd
-import cv2
-import numpy as np
+
+"""
+This file is used to perform any operations regarding the colours of the image
+such as RGB to HSV conversion and determining the most prominent colour.
+"""
+
 
 index = ["color", "color_name", "R", "G", "B"]
 csv_file = pd.read_csv('../coloursfull.csv', names=index, header=None)
 
-# -- FUNCTION DEFINITION --#
 
-# function to calculate minimum distance from all colors and get the most matching color
 def getColorName(rgb):
+    """
+    **Adapted code from:** *https://data-flair.training/blogs/project-in-python-colour-detection/*\n
+    This function is used to determine the name of the colour based on the RGB values through a minimum distance
+    calculation with a csv file containing colour data.\n
+    :param rgb: A tuple of RGB values.
+    :return: The colour name.
+    """
     R = rgb[0]
     G = rgb[1]
     B = rgb[2]
@@ -24,8 +33,13 @@ def getColorName(rgb):
     return cname
 
 
-# gets the names of the two most common colours
 def list_colour(img):
+    """
+    **Group defined function** \n
+    This function is used to get the two most occurring RGB values and get the respective colour names.\n
+    :param img: A 3D array of the image.
+    :return: A string representing the colour name.
+    """
     name = []
     rgb_number = []
 
@@ -50,8 +64,13 @@ def list_colour(img):
     return string
 
 
-# gets the most common RGB value
 def get_colour(img):
+    """
+    **Group defined function** \n
+    This function is used to get the most common RGB value in the image.\n
+    :param img: A 3D array of the image.
+    :return: A tuple of the most common RGB values.
+    """
     rgb_number = []
 
     (size, dim) = img.shape
@@ -66,8 +85,15 @@ def get_colour(img):
     return rgb_common[0][0]
 
 
-# calculates H value
 def declare_h(dif, div, max_value):
+    """
+    **Group defined function** \n
+    This function is used to calculate the hue when converting from RGB to HSV.\n
+    :param dif: The difference between the highest and lowest value in the RGB tuple.
+    :param div: The RGB tuple.
+    :param max_value: The highest value in the RGB tuple.
+    :return: The hue.
+    """
     if dif == 0:
         return 0
     elif max_value == div[2]:
@@ -78,31 +104,38 @@ def declare_h(dif, div, max_value):
         return (((div[2] - div[1]) / dif) * 60 + 240) % 360
     else:
         pass
-        # error
 
 
-# calculates S value
 def declare_s(max_value, dif):
+    """
+    **Group defined function** \n
+    This function is used to calculate the saturation when converting from RGB to HSV.\n
+    :param max_value: The highest value in the RGB tuple.
+    :param dif: The difference between the highest and lowest value in the RGB tuple.
+    :return: The saturation.
+    """
     if max_value == 0:
         return 0
     else:
         return (dif / max_value) * 100
 
 
-# converts rgb values to hsv
 def rgb2hsv(colour):
+    """
+    **Group defined function** \n
+    This function is used to convert RGB values to HSV.\n
+    :param colour: A tuple representing the colour's RGB values.
+    :return: A tuple of the converted HSV values.
+    """
     div = tuple(float(value) / 255 for value in colour)
     max_value = max(div)
     min_value = min(div)
     dif = max_value - min_value
 
-    # getting H value (It is supposed to be a function)
     h = declare_h(dif, div, max_value)
 
-    # getting S value
     s = declare_s(max_value, dif)
 
-    # checking the colours
     v = max_value * 100
 
     return (h, s, v)

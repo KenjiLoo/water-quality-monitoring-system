@@ -6,14 +6,22 @@ import sys
 import os
 from Software.cam import first_image
 
+"""
+This file is used to design and implement the functionalities of the camera page in the GUI.
+"""
 
 sys.path.insert(0, 'SEGP9A/Software')
 
 
 dir = os.path.dirname(os.path.abspath(__file__))
 
-# -- FUNCTION DEFINITION --#
+
 def homePage(tk):
+    """
+    **Group defined function** \n
+    This function is used to destroy the current page and to open the home page.\n
+    :param tk: !!!
+    """
     tk.destroy()
     import GUI.main_page as main_page
     main_page.main()
@@ -21,18 +29,33 @@ def homePage(tk):
 
 
 def finalPage(tk):
+    """
+    **Group defined function** \n
+    This function is used to destroy the current page and to open the final page.\n
+    :param tk: !!!
+    """
     tk.destroy()
     import GUI.image_cropping as image_cropping
     image_cropping.main()
 
 
 def imageCapture(tk):
+    """
+    **Group defined function** \n
+    This function is used to destroy the current page and to open the final page.\n
+    :param tk: !!!
+    """
     first_image()
     os.chdir(dir)
     finalPage(tk)
 
 
 def main():
+    """
+    **Group defined function** \n
+    This function contains the designs of the GUI (Buttons, Bars, Images, Window Dimension etc.)
+    inclusive of its functionalities.\n
+    """
     # --------------------------------------TOP BAR---------------------------------------------------
     # define window as GUI window, set minimum dimension
     window = Tk()
@@ -71,9 +94,11 @@ def main():
     label.grid(row=1, column=1)
     cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
 
-
-    # Define function to show frame
     def show_frames():
+        """
+        **Group defined function** \n
+        This function is used to show the frame.\n
+        """
         # Get the latest frame and convert into Image
         cv2image = cv2.cvtColor(cap.read()[1], cv2.COLOR_BGR2RGB)
         img = Image.fromarray(cv2image)
@@ -83,7 +108,6 @@ def main():
         label.configure(image=imgtk)
         # Repeat after an interval to capture continously
         label.after(20, show_frames)
-
 
     show_frames()
 

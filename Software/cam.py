@@ -7,12 +7,19 @@ import Software.main_algo
 import Software.segment
 import Software.crop
 
+"""
+This file is used for the operations of the webcam and image acquisition.
+"""
+
 img_path = "../images"
 thresh_path = "../thresh"
 
 
-# Captures the image when the user presses the button
 def first_image():
+    """
+    **Group defined function** \n
+    This function is used to capture the first image when the user presses the button.
+    """
     os.chdir(img_path)
     cam = VideoCapture(0, cv2.CAP_DSHOW)
     cv2.destroyAllWindows()
@@ -23,15 +30,25 @@ def first_image():
         print("error")
 
 
-# to retake image
 def retake_image():
+    """
+    **Group defined function** \n
+    This is a function that will delete the first image taken by the user.
+    """
     os.chdir(img_path)
     for file in os.listdir(img_path):
         os.remove(file)
 
 
-# to crop image
 def crop_image(x1, y1, x2, y2):
+    """
+    **Group defined function** \n
+    This function is used to crop an image and perform Otsu thresholding. \n
+    :param x1: x coordinate of the top left corner of the crop box.
+    :param y1: y coordinate of the top left corner of the crop box.
+    :param x2: x coordinate of the bottom right corner of the crop box from the top left corner.
+    :param y2: y coordinate of the bottom right corner of the crop box from the top left corner.
+    """
     global run
     img = Software.crop.cropping(x1, y1, x2, y2)
     thresh = Software.segment.get_threshold(img)
@@ -40,15 +57,23 @@ def crop_image(x1, y1, x2, y2):
     run = True
 
 
-# to get the first image
 def get_image():
+    """
+    **Group defined function** \n
+    This function is used to read the first image after segmentation.\n
+    :return: 3D array of the first image.
+    """
     os.chdir(thresh_path)
     img = cv2.imread("0_thresh.jpg")
     return img
 
 
-# to capture image every interval
 def image_capture(interval):
+    """
+    **Group defined function** \n
+    This function is used to capture an image at every time interval.\n
+    :param interval: An integer value representing the time interval to take an image.
+    """
     global run
     os.chdir(img_path)
     name = 1
@@ -77,8 +102,11 @@ def image_capture(interval):
         name = name + 1
 
 
-# deletes the images in the folder after the observation is stopped
 def delete_images():
+    """
+    **Group defined function** \n
+    This function is used to delete the images in the folder after the observation is stopped.
+    """
     global run
     run = False
     global img_path

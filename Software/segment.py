@@ -1,10 +1,17 @@
 import cv2
 
+"""
+This file is used to perform segmentation on the target image.
+"""
 
-# -- FUNCTION DEFINITION --#
 
-# performs otsu thresholding
 def get_threshold(img):
+    """
+    **Group defined function** \n
+    This function performs Otsu thresholding to a given input image.\n
+    :param img: A 3D array of the image.
+    :return: The segmented image with the non-water pixels having the RGB values of (255, 255, 255).
+    """
     row = img.shape[0]
     col = img.shape[1]
 

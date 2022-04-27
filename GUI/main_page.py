@@ -4,20 +4,39 @@ from tkinter import ttk
 import os
 import argparse
 
-# -- FUNCTION DEFINITION --#
+"""
+This file is used to design and implement the functionalities of the main page in the GUI.
+"""
+
 
 dir = os.path.dirname(os.path.abspath(__file__))
 
+
 def cameraPage(tk):
+    """
+    **Group defined function** \n
+    This function is used to destroy the current page and to open the camera page.\n
+    :param tk: !!!
+    """
     tk.destroy()
     import GUI.camera as camera
     camera.main()
 
 
 def callWeb():
+    """
+    **Group defined function** \n
+    This function is used to open the web application.\n
+    """
     webbrowser.open_new(r"localhost/webapp/index.php")
 
+
 def main():
+    """
+    **Group defined function** \n
+    This function contains the designs of the GUI (Buttons, Bars, Images, Window Dimension etc.)
+    inclusive of its functionalities.\n
+    """
     # --------------------------------------TOP BAR---------------------------------------------------
     # define window as GUI window, set minimum dimension
     os.chdir(dir)
@@ -95,5 +114,6 @@ def main():
 
     # to run the window
     window.mainloop()
+
 
 main()

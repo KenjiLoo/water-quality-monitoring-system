@@ -5,36 +5,63 @@ import sys
 import os
 from Software.cam import retake_image, crop_image
 
+"""
+This file is used to design and implement the functionalities of the cropping page in the GUI.
+"""
+
 sys.path.insert(0, 'SEGP9A/Software')
 dir = os.path.dirname(os.path.abspath(__file__))
 
-# -- FUNCTION DEFINITION --#
 
-# to open the camera page
 def cameraPage(tk):
+    """
+    **Group defined function** \n
+    This function is used to destroy the current page and to open the camera page.\n
+    :param tk: !!!
+    """
     tk.destroy()
     import GUI.camera as camera
     camera.main()
 
-# to open the interval settings page
+
 def timeSettingPage(tk):
+    """
+    **Group defined function** \n
+    This function is used to destroy the current page and to open the time interval page.\n
+    :param tk: !!!
+    """
     tk.destroy()
     import GUI.time_setting as time_setting
     time_setting.main()
 
-# open camera page to retake
+
 def retakeImage(tk):
+    """
+    **Group defined function** \n
+    This function is used to open the camera page to retake an image.\n
+    :param tk: !!!
+    """
     retake_image()
     cameraPage(tk)
 
-# faciltates the cropping mechanism
+
 def start_crop(tk):
+    """
+    **Group defined function** \n
+    This function is used to facilitate the cropping mechanism.\n
+    :param tk: !!!
+    """
     crop_image(x_top, y_top, x_bot, y_bot)
     os.chdir(dir)
     timeSettingPage(tk)
 
-# main algorithm that runs in this page
+
 def main():
+    """
+    **Group defined function** \n
+    This function contains the designs of the GUI (Buttons, Bars, Images, Window Dimension etc.)
+    inclusive of its functionalities.\n
+    """
     # --------------------------------------TOP BAR---------------------------------------------------
     # define window as GUI window, set minimum dimension
     window = Tk()
@@ -64,11 +91,14 @@ def main():
     Label(window, text="2. Press ENTER when completed", background="white", font=("Poppins", 10)).pack()
     Label(window, text="3. To reselect the region, draw a rectangle again", background="white", font=("Poppins", 10)).pack()
 
-
     def select_ROI(window):
+        """
+        **Group defined function** \n
+        This is a function that gets the coordinates of the box drawn by the user on the image.\n
+        :param window: !!!
+        """
         global x_top, y_top, x_bot, y_bot
 
-        # insert while loop to change crop image
         os.chdir("../images")
 
         img = cv2.imread("0.jpg")
