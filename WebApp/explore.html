@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="with=device-width, initial-scale=1.0">
+    <title>SEGP 9A</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <section class="sub-header">
+        <nav>
+            <a href="mainpage.html"> <img src="images/frontpagelogo.png"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="mainpage.html">HOME</a></li>
+                    <li><a href="intro.html">INTRODUCTION</a></li>
+                    <li><a href="library.php">LIBRARY</a></li>
+                    <li><a href="monitor.php">MONITOR</a></li>
+                    <li><a href="index.php">LOGOUT</a></li>
+                    
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+        <h1>Explore Now</h1>
+        </section>
+
+    <!---------Explore now Content------->
+    
+    <section class="explore">
+        <div class="row">
+            <div class="explore-col">
+                <h1><b>H2O Analysis</b></h1>
+                <p><b>This mobile app looks to provide an online and dynamic capturing system with a relatively cost efficient and accessible (without professional equipment) method to perform water quality checks. In order to achieve this, a mobile app along with a computer system is used. The computer system functions by analyzing the water quality by using images of the water. After analysis of the water, the data will be stored in a database and the data would then be transferred to the mobile app. The mobile app will be used to display the data and to alert the off-site operator regarding further actions that can be taken when the water quality changes.</b> </p>
+                <hr>
+                <br>
+                <h1>How H2O Analysis Works</h1>
+            </div>
+            <div class="explore-col">
+                <img src="images/analysis.png">
+                <br>
+            </div>
+            <div class="explore-col">
+                <h1>Development of Water Analysis Software</h1>
+                <img src="images/epm.png">
+            </div>
+            <div class="explore-col">
+                <p><b>By developing the water analysis software, we are going to use and follow the steps of the evolutionary prototyping model. Firstly, we will gather all of the requirements from the client and analyse it. Then we will start our prototype development during this requirement phase. The client will then evaluate the prototype and give feedback, the feedback can be corrections to the prototype or additional functionality to it. Based on the feedback, we will further refine the prototype and ask the client to evaluate again till its fine. But after it is done, we will design the simulation and start our coding part by using PIL. Testing will be carried out to ensure that the proposed system is fully functional.</b></h2>
+            </div>
+    </section>
+
+    <!-----------Javascript for Toggle Menu------->
+        <script>
+
+            var navLinks = document.getElementById("navLinks");
+            function showMenu(){
+                navLinks.style.right = "0";
+            }
+            function hideMenu(){
+                navLinks.style.right = "-200px";
+            }
+        </script>
+    
+    <!------Footer------>
+    
+    <section class="footer">
+        <h4>Follow Us</h4>
+      <div class="icons">
+          <i class="fa fa-facebook"></i>
+          <i class="fa fa-twitter"></i>
+          <i class="fa fa-instagram"></i>
+          <i class="fa fa-snapchat"></i>
+          <i class="fa fa-youtube"></i>
+      </div>
+  </section>

@@ -1,0 +1,585 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins',sans-serif;
+    box-sizing: border-box;
+}
+
+.header{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(images/water.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+nav img{
+    width: 150px;
+}
+.nav-links{
+    flex: 1;
+    text-align: right;
+}
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+.nav-links ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+.nav-links ul li::after{
+    content:'';
+    width: 0%;
+    height: 2px;
+    background: #f44336;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+.nav-links ul li:hover::after{
+    width: 100%;
+}
+.text-box{
+    width: 90%;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.text-box h1{
+    font-size: 62px;
+}
+.text-box p{
+    margin: 10px 0 40px;
+    font-size: 32px;
+    color: #fff;
+}
+.hero-btn{
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 12px 34px;
+    font-size: 13px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+.hero-btn:hover{
+    border: 1px solid #f44336;
+    background: #f44336;
+    transition: 1s;
+}
+
+nav .fa{
+    display: none;
+}
+
+.footer{
+    width:100%;
+    text-align: center;
+    padding: 30px 0;
+}
+
+.footer h4{
+    margin-bottom: 25px;
+    margin-top: 20px;
+    font-weight: 600;
+    font-size: 20px;
+    
+}
+
+.icons.fa{
+    color:#f44336;
+    margin: 0 13px;
+    cursor: pointer;
+    padding: 18px 0;
+}
+
+@media(max-width: 784px){
+    .text-box h1{
+        font-size: 20px;
+    }
+    .nav-links ul li{
+        display: block;
+    }
+    .nav-links{
+        position: fixed;
+        background: #f44336;
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        right: -200px;
+        text-align: left;
+        z-index: 2;
+        transition: 1s;
+    }
+    nav .fa{
+        display: block;
+        color: #fff;
+        margin: 10px;
+        font-size: 22px;
+        cursor: pointer;
+    }
+    .nav-links ul{
+        padding: 30px;
+    }
+    .library-table thead{
+        display: none;
+    }
+    .library-table, .library-table tbody, .library-table tr, .library-table td{
+        display: block;
+        width: 100%;
+    } 
+    .library-table tr{
+        margin-bottom: 15px;
+    }
+    .library-table tbody tr td{
+        font-size: 16px;
+        position: relative;
+    }
+    .library-table td:before{
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 15px;
+        font-weight: 600;
+        font-size: 14px;
+        text-align: left;
+    }
+}
+
+/*---------- introduction page---------*/
+
+.sub-header{
+    height: 40vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(images/intro.png);
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    color: #fff;
+}
+.sub-header h1{
+    padding: 40px;
+    font-size: 52px;
+}
+.introduction{
+    width: 80%;
+    margin: auto;
+    padding-top: 80px;
+    padding-bottom: 50px;
+}
+
+.intro-col{
+    flex-basis: 48%;
+    padding: 30px 2px;
+}
+
+.intro-col img{
+    width: 100%;
+}
+
+.intro-col h1{
+    padding-top: 0;
+    font-size: 180%;
+}
+
+.intro-col p{
+    padding: 15px 0 25px;
+    font-size: 140%;
+}
+
+.red-btn{
+    border: 1px solid #f44336;
+    background: transparent;
+    color: #f44336;
+}
+
+.red-btn:hover{
+    color: #fff;
+}
+
+/*--------camera page----------*/
+
+.location{
+    width: 80%;
+    margin: auto;
+    padding: 80px 0;
+}
+.location iframe{
+    width: 100%;
+}
+
+.video-wrap{
+    text-align: center;
+    width: 100%;
+}
+
+.controller{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+}
+
+/*------------explore page----------*/
+
+.explore{
+    width: 80%;
+    margin: auto;
+    padding-top: 80px;
+    padding-bottom: 50px;
+}
+
+.explore-col{
+    flex-basis: 48%;
+    padding: 30px 2px;
+}
+
+.explore-col img{
+    width: 100%;
+}
+
+.explore-col h1{
+    padding-top: 0;
+    font-size: 180%;
+}
+
+.explore-col p{
+    padding: 15px 0 25px;
+    font-size: 140%;
+}
+
+/*-----------library page-----------*/
+.table-container{
+    padding: 0 10%;
+    margin: 50px auto 0;
+}
+.library-table{
+    font-size: 1.3em;
+    margin: 25px 0;
+    border-collapse: collapse;
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    
+  }
+  .library-table thead tr{
+    background-color: #009879;
+    color: #ffffff;
+    text-align: center;
+  }
+  .library-table th,
+  .library-table td{
+    padding: 12px 15px;
+    border: 1px solid #009879;
+    text-align: center;
+  }
+  .library-table tbody tr{
+    border-bottom: 1px solid #dddddd;
+  }
+  .library-table tbody tr:nth-of-type(even){
+    background-color: #f3f3f3;
+  }
+  .library-table tbody tr:last-of-type{
+    border-bottom: 2px solid #009879;
+  }
+
+/*---------- monitor page---------*/
+
+#curve_chart {
+    display: inline-block;
+    margin: 0 auto;
+  }
+
+  .right-content
+{
+  float:right;  
+  position:relative; right: 300px; top: 150px
+}
+
+/*-------login page-----*/
+.login-header{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(images/water.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 360px;
+    width: 400px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.center h1{
+    text-align: center;
+    padding: 20px 30px 20px ;
+    border-bottom: 1px solid silver;
+    margin-bottom: 2rem;
+}
+
+.center form{
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+form .txt_field{
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 30px 0;
+}
+
+.txt_field input{
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.txt_field label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #adadad;
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.txt_field span::before{
+    content:'';
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: #2691d9;
+    transition: .5s;
+}
+
+.txt_field input:focus ~ label,
+.txt_field input:valid ~ label{
+    top: -5px;
+    color: #2691d9;
+}
+
+.txt_field input:focus ~ span::before,
+.txt_field input:valid ~ span::before{
+    width: 100%;
+}
+
+.pass{
+    margin: -5px 0 20px 5px;
+    color: #a6a6a6;
+    cursor: pointer;
+}
+
+.pass:hover{
+    text-decoration: underline;
+}
+
+input[type="submit"]{
+    width: 100%;
+    height: 50px;
+    border: 1px solid;
+    background: #2691d9;
+    border-radius: 25px;
+    font-size: 18px;
+    color: #e9f4fb;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+    margin: 30px 0;
+}
+
+input[type="submit"]:hover{
+    border-color: #2691d9;
+    transition: .5s;
+}
+
+span{
+    position: absolute;
+    right: 15px;
+    transform: translate(0, -50%);
+    top: 50%;
+    cursor: pointer;
+}
+
+.fa{
+    font-size: 20px;
+    color: #7a797e;
+}
+
+.signup_link{
+    margin: 30px 0;
+    text-align: center;
+    font-size: 16px;
+    color: #666666;
+}
+
+.signup_link a{
+    color: #2691d9;
+    text-decoration: none;
+}
+
+.signup_link a:hover{
+    text-decoration: underline;
+}
+
+.error{
+    color:#cc3333;
+    margin-bottom: 5px;
+}
+
+/*-----registration page------*/
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+.registration{
+    display: flex;
+    box-sizing: border-box;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(images/water.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container{
+    max-width: 700px;
+    width: 100%;
+    background: #fff;
+    padding: 25px 50px;
+    border-radius: 5px;
+}
+
+.container .title{
+    font-size: 35px;
+    font-weight: 500;
+    position: relative;
+}
+
+.container .title::before{
+    content:'';
+    position: absolute;
+    height: 3px;
+    width: 30px;
+    left: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+
+.container form .user-details{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+
+}
+
+.user-details .input-box{
+    margin: 20px 0 12px 0;
+    width: 100%;
+}
+
+form .user-details .input-box .details{
+    display: block;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.user-details .input-box input{
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+
+.user-details .input-box input:focus,
+.user-details .input-box input:valid{
+    border-color: #9b59b6
+}
+
+.register-button{
+    height: 45px;
+    margin: 45px 0;
+}
+
+.register-button input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    color: #fff;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6)
+}
+
+form .button input:hover{
+    background: linear-gradient(135deg, #71b7e6, #9b59b6)
+}
+
+@media (max-width: 584px){
+    .container{
+        max-width: 100%;
+    }
+    form .user-details .input-box{
+        margin-bottom: 15px;
+        width: 100%;
+    }
+    .container form .user-details{
+        max-height: 300px;
+        overflow-y: scroll;
+    }
+    .user-details::-webkit-scrollbar{
+        width: 0;
+    }
+}
+
+#container input[type="submit"]
+{
+    height: 45px;
+    border: none;
+    background: #0557ee;
+    color: #fff;
+    font-size: 20px;
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+
