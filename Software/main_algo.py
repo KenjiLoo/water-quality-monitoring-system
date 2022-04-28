@@ -15,11 +15,11 @@ This file contains the main algorithms used for the water analysis software.
 # gets the latest image from the image folder
 def get_latest_image(dirpath, valid_extensions=('jpg', 'jpeg', 'png')):
     """
-    !!!
+    Reads the latest image in the specific folder
     Get the latest image file in the given directory.\n
-    :param dirpath: !!!
-    :param valid_extensions: !!!
-    :return: !!!
+    :param dirpath: directory path to the folder to read
+    :param valid_extensions: the supported formats 
+    :return: the image file
     """
     # get filepaths of all files and dirs in the given dir
     valid_files = [os.path.join(dirpath, filename) for filename in os.listdir(dirpath)]
@@ -36,9 +36,9 @@ def get_latest_image(dirpath, valid_extensions=('jpg', 'jpeg', 'png')):
 # converts the image to binary data to be posted as a BLOB
 def convertToBinaryData(filename):
     """
-    !!!
-    :param filename: !!!
-    :return: !!!
+    Converts the image read into binary data to be stored as a BLOB in the database
+    :param filename: the image file
+    :return: binaryData, the binary data of the image
     """
     # Convert digital data to binary format
     with open(filename, 'rb') as file:
