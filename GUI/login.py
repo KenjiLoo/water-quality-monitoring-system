@@ -31,7 +31,7 @@ def callWeb():
 
 def Ok():
     """
-    **Group defined function** \n
+    **Adapted code from:** *https://medium.com/@asknanishankar/writing-a-simple-python-script-to-post-data-from-sql-server-database-using-requests-52d6fe70672f*\n
     This function contains the designs of the GUI (Buttons, Bars, Images, Window Dimension etc.)
     inclusive of its functionalities. Moreover, it includes the functionalities of the login system
     which is linked to the database.\n

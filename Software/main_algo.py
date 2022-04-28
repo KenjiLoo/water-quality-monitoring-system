@@ -12,14 +12,13 @@ This file contains the main algorithms used for the water analysis software.
 """
 
 
-# gets the latest image from the image folder
 def get_latest_image(dirpath, valid_extensions=('jpg', 'jpeg', 'png')):
     """
-    Reads the latest image in the specific folder
-    Get the latest image file in the given directory.\n
-    :param dirpath: directory path to the folder to read
-    :param valid_extensions: the supported formats 
-    :return: the image file
+    **Adapted code from:** *https://pynative.com/python-mysql-blob-insert-retrieve-file-image-as-a-blob-in-mysql/*\n
+    Reads the latest image in the specific folder and gets the latest image file in the given directory.\n
+    :param dirpath: Directory path to the folder to read.
+    :param valid_extensions: The supported formats.
+    :return: The image file.
     """
     # get filepaths of all files and dirs in the given dir
     valid_files = [os.path.join(dirpath, filename) for filename in os.listdir(dirpath)]
@@ -33,12 +32,12 @@ def get_latest_image(dirpath, valid_extensions=('jpg', 'jpeg', 'png')):
     return max(valid_files, key=os.path.getmtime)
 
 
-# converts the image to binary data to be posted as a BLOB
 def convertToBinaryData(filename):
     """
-    Converts the image read into binary data to be stored as a BLOB in the database
-    :param filename: the image file
-    :return: binaryData, the binary data of the image
+    **Adapted code from:** *https://pynative.com/python-mysql-blob-insert-retrieve-file-image-as-a-blob-in-mysql/*\n
+    Converts the image read into binary data to be stored as a BLOB in the database.\n
+    :param filename: The image file.
+    :return: The binary data of the image.
     """
     # Convert digital data to binary format
     with open(filename, 'rb') as file:
@@ -215,9 +214,9 @@ def get_image():
 
 def start_program(img2):
     """
-    !!!
+    **Partly group defined function** \n
+    **Partly adapted code from:** *https://medium.com/@asknanishankar/writing-a-simple-python-script-to-post-data-from-sql-server-database-using-requests-52d6fe70672f*\n
     Calls the functions to compare the images and get the names of the two most occurring colours.\n
-    !!!
     :param img2: A 3D array of the new image
     """
     global img1

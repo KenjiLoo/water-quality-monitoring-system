@@ -96,7 +96,7 @@ def main():
 
     def show_frames():
         """
-        **Group defined function** \n
+        **Adapted code from:** *https://stackoverflow.com/questions/68987029/how-to-take-picture-without-freezing-with-tkinter-and-opencv*\n
         This function is used to show the frame.\n
         """
         # Get the latest frame and convert into Image
