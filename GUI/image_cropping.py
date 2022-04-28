@@ -95,7 +95,6 @@ def main():
         """
         **Group defined function** \n
         This is a function that gets the coordinates of the box drawn by the user on the image.\n
-        :param window: !!!
         """
         global x_top, y_top, x_bot, y_bot
 
